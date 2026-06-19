@@ -71,9 +71,16 @@ def update_status():
 
     print(f"Task '{task_update}' not found.")
 
+def show_summary_inline():
+    total = len(tasks)
+    completed = sum(1 for t in tasks if t["Done"])
+    pending = total - completed
+
+    print(f"\n📊 Total: {total} | ✅ Done: {completed} | ⏳ Pending: {pending}")
 
 # MENU LOOP
 while True:
+    show_summary_inline()  
     print("\n===== TASK MANAGER =====")
     print("1. Add Task")
     print("2. View Tasks")
