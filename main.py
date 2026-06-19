@@ -1,15 +1,16 @@
 tasks = [{"task": "Buy groceries", "Done": False}]
 
-# ADD TASK 
+
+# ADD TASK
 def add_task():
     new_task = input("Enter the task you want to add: ").strip()
 
     if not new_task:
         print("Task cannot be empty.")
         return
-    
+
     for t in tasks:
-        if t["task"].lower() == new_task.lower():   # FIX (case-insensitive)
+        if t["task"].lower() == new_task.lower():
             print(f"Task '{new_task}' already exists.")
             return
 
@@ -17,7 +18,7 @@ def add_task():
     print(f"Task '{new_task}' added successfully.")
 
 
-# VIEW TASK
+# VIEW TASKS
 def view_tasks():
     if not tasks:
         print("The task list is empty.")
@@ -33,26 +34,28 @@ def view_tasks():
 # DELETE TASK
 def delete_task():
     task_name = input("Enter the task you want to delete: ").strip().lower()
-    
+
     for t in tasks:
-        if t["task"].lower() == task_name:   # FIX (case-insensitive)
+        if t["task"].lower() == task_name:
             tasks.remove(t)
             print(f"Task '{t['task'].title()}' deleted successfully.")
             return
 
     print(f"Task '{task_name}' not found.")
 
+
+# UPDATE STATUS
 def update_status():
-    task_update = input("Enter the task you want to update the status for: ").strip().lower()
-    
+    task_update = input("Enter the task you want to update: ").strip().lower()
+
     if not task_update:
         print("Task cannot be empty.")
         return
 
-    update_status = input("Enter the new status (Done/Not Done): ").strip().lower()
+    update_status = input("Enter status (Done/Not Done): ").strip().lower()
 
     if update_status not in ["done", "not done"]:
-        print("Invalid status. Please enter 'Done' or 'Not Done'.")
+        print("Invalid status. Please enter Done or Not Done.")
         return
 
     for t in tasks:
@@ -66,3 +69,33 @@ def update_status():
             return
 
     print(f"Task '{task_update}' not found.")
+
+
+# MENU LOOP
+while True:
+    print("\n===== TASK MANAGER =====")
+    print("1. Add Task")
+    print("2. View Tasks")
+    print("3. Delete Task")
+    print("4. Update Task Status")
+    print("5. Exit")
+
+    try:
+        choice = int(input("Enter your choice: "))
+
+        if choice == 1:
+            add_task()
+        elif choice == 2:
+            view_tasks()
+        elif choice == 3:
+            delete_task()
+        elif choice == 4:
+            update_status()
+        elif choice == 5:
+            print("Exiting Task Manager. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+    except ValueError:
+        print("Invalid input. Please enter a number.")
