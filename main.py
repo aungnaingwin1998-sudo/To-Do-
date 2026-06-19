@@ -1,4 +1,4 @@
-tasks = [{"task": "Buy groceries", "Done": False}]
+tasks = [{}]
 
 
 # ADD TASK
@@ -24,16 +24,17 @@ def view_tasks():
         print("The task list is empty.")
     else:
         for i, k in enumerate(tasks, start=1):
-            if k["Done"] == True:
-                status = "✓"
-            else:
-                status = "✗"
+            status = "✓" if k["Done"] == True else "✗"
             print(f"{i}. {k['task'].title()} [{status}]")
 
 
 # DELETE TASK
 def delete_task():
     task_name = input("Enter the task you want to delete: ").strip().lower()
+
+    if not task_name:
+        print("Task cannot be empty.")
+        return
 
     for t in tasks:
         if t["task"].lower() == task_name:
@@ -52,15 +53,15 @@ def update_status():
         print("Task cannot be empty.")
         return
 
-    update_status = input("Enter status (Done/Not Done): ").strip().lower()
+    status_input = input("Enter status (Done/Not Done): ").strip().lower()
 
-    if update_status not in ["done", "not done"]:
+    if status_input not in ["done", "not done"]:
         print("Invalid status. Please enter Done or Not Done.")
         return
 
     for t in tasks:
         if t["task"].lower() == task_update:
-            if update_status == "done":
+            if status_input == "done":
                 t["Done"] = True
             else:
                 t["Done"] = False
