@@ -1,70 +1,79 @@
 # 📝 Task Manager (Python CLI)
 
 A simple command-line Task Manager built with Python.  
-It allows users to manage daily tasks with add, view, delete, update, and summary features.
+This project helps users manage daily tasks efficiently using a terminal-based interface.
 
 ---
 
 ## 🚀 Features
 
-- ➕ Add tasks
-- 📋 View all tasks
-- ❌ Delete tasks
-- 🔄 Update task status (Done / Not Done)
-- 📊 Live summary dashboard (Total / Completed / Pending)
-- 🔁 Continuous menu loop
-- 🧠 Case-insensitive task handling
+- ➕ Add new tasks  
+- 📋 View all tasks  
+- ❌ Delete tasks  
+- 🔄 Update task status (Done / Not Done)  
+- 📊 Live summary dashboard (Total / Completed / Pending)  
+- 🔁 Continuous menu loop  
+- 🧠 Case-insensitive task handling  
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Python 3
-- Lists & Dictionaries
-- CLI (Command Line Interface)
+- Python 3  
+- Lists & Dictionaries  
+- Command Line Interface (CLI)
 
 ---
 
 ## ▶️ How to Run
 
 1. Clone the repository:
-git clone https://github.com/your-username/task-manager.git
+```bash
+gh repo clone aungnaingwin1998-sudo/To-Do-
+```
 
 2. Go to the project folder:
-cd task-manager
+```bash
+cd To-Do-
+```
 
 3. Run the program:
+```bash
 python main.py
+```
 
 ---
 
 ## 📂 Project Structure
 
-task-manager/
+```
+To-Do-/
 │
 ├── main.py
 └── README.md
+```
 
 ---
 
 ## 💡 Future Improvements
 
-- Save tasks to file (JSON / TXT)
-- Load tasks on startup
-- Add priority levels (High / Medium / Low)
-- Add due dates
-- Add search functionality
-- Add progress bar for completion
+- Save tasks to file (JSON / TXT)  
+- Load tasks on startup  
+- Add priority levels (High / Medium / Low)  
+- Add due dates  
+- Add search functionality  
+- Improve UI with better CLI formatting  
+- Add progress indicators  
 
 ---
 
 ## 👨‍💻 Author
 
-Built by Imran  
-Python beginner project focused on CLI development 🚀
+Built by **Aung Naing Win**  
+A beginner-friendly Python CLI project focused on task management and basic software structure.
 
 ---
 
 ## ⭐ Support
 
-If you like this project, feel free to star ⭐ the repository.
+If you like this project, feel free to star the repository.
